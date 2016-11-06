@@ -14,7 +14,7 @@ new Vue({
 
           this.$http.get(this.api).then(function(response) {
 
-              console.log(response)
+              console.log(response.body.data)
 
           }, function(error) {
             //   ошибка
