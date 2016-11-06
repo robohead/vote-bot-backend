@@ -1,6 +1,8 @@
 # Vote-bot
 
+[![Build Status](https://travis-ci.org/Iamthelaw/vote-bot.svg?branch=master)](https://travis-ci.org/Iamthelaw/vote-bot)
 [![Join the chat at https://gitter.im/Iamthelaw/vote-bot](https://badges.gitter.im/Iamthelaw/vote-bot.svg)](https://gitter.im/Iamthelaw/vote-bot?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Slack-бот для голосований
 
 ## Список поддерживаемых команд
