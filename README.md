@@ -22,3 +22,18 @@ Slack-бот для голосований
 1. `$ pip install -r requirements.txt`
 2. `$ echo "SLACK_TOKEN='' SLASH_COMMANDS_TOKEN='' DOMAIN='' DEFAULT_CHANNEL='' python app.py" > start.sh`
 3. `$ chmod +x start.sh && ./start.sh`
+
+## Build Setup
+
+``` bash
+# Установка зависимостей
+npm install
+
+# Запуск сервера с hot reload по адресу localhost:8080
+npm run dev
+
+# Продакшен сборка
+npm run build
+```
+
+В сборке используется шаблон [webpack-simple](https://github.com/vuejs-templates/webpack-simple).
