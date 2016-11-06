@@ -38,7 +38,13 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    noInfo: true
+    noInfo: true,
+    proxy: {
+      'python': {
+        target: 'http://127.0.0.1:5000',
+        secure: false
+      }
+    }
   },
   devtool: '#eval-source-map'
 }
