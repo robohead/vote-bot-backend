@@ -91,3 +91,4 @@ db.json
 start.sh
 
 node_modules/
+static/build/
