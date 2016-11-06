@@ -23,7 +23,7 @@ Slack-бот для голосований
 2. `$ echo "SLACK_TOKEN='' SLASH_COMMANDS_TOKEN='' DOMAIN='' DEFAULT_CHANNEL='' python app.py" > start.sh`
 3. `$ chmod +x start.sh && ./start.sh`
 
-## Build Setup
+## Сборка статики
 
 ``` bash
 # Установка зависимостей
