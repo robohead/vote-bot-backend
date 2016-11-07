@@ -7,7 +7,7 @@ Vue.use(VueResource)
 new Vue({
   el: '#app',
   data: {
-      api: 'https://jsonplaceholder.typicode.com/posts'
+      api: 'http://127.0.0.1:5000/api'
   },
   methods: {
       getAllVotes: function() {
