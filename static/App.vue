@@ -6,7 +6,6 @@
         <span>{{ vote.content }}</span>
 
     </div>
-
   </div>
 </template>
 

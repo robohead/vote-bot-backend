@@ -15,7 +15,6 @@ Vue.material.theme.register('default', {
 new Vue({
   el: '#app',
   data: {
-
   },
   render: h => h(App)
 })
