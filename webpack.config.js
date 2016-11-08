@@ -4,7 +4,7 @@ var webpack = require('webpack')
 module.exports = {
   entry: './static/main.js',
   output: {
-    path: path.resolve(__dirname, './static/build'),
+    path: path.resolve(__dirname, './dist/'),
     publicPath: '/dist/',
     filename: 'build.js'
   },
@@ -43,12 +43,14 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     noInfo: true,
-    proxy: {
-      'python': {
-        target: 'http://127.0.0.1:5000',
-        secure: false
-      }
-    }
+    proxy: [
+        {
+            context:[ '/' ],
+            target: 'http://127.0.0.1:5000',
+            secure: false
+        }
+
+    ]
   },
   devtool: '#eval-source-map'
 }

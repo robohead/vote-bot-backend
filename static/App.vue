@@ -1,15 +1,11 @@
 <template>
   <div id="app">
-    <div class="" v-for="vote in votes">
-        <span>sdfsdfsdfsdf</span>
-        <span>{{ vote.author_name }}</span>
-        <span>{{ vote.content }}</span>
-
-    </div>
+      <list :votes='this.votes'></list>
   </div>
 </template>
 
 <script>
+import List from './../components/List.vue'
 
 export default {
   name: 'app',
@@ -36,6 +32,9 @@ export default {
   },
   created: function() {
       this.getAllVotes()
+  },
+  components: {
+      List
   }
 }
 </script>
