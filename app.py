@@ -80,7 +80,7 @@ def direct_msg(user_id, text=None, attachments=None):
 def add_vote(user_id, user, text):
     u"""
     Добавляет предложение в базу и отправляет сообщение в слак.
-    
+
     команда: /vote add [text]
     """
     # TODO: Нужно отправлять сообщение списку пользователей
@@ -89,7 +89,7 @@ def add_vote(user_id, user, text):
         'author_id': user_id,
         'content': text,
         'rank': 0,
-        'voters': [] 
+        'voters': []
     })
     members = get_members(DEFAULT_CHANNEL)
     attachments = [
@@ -110,7 +110,7 @@ def add_vote(user_id, user, text):
 def show_vote(user_id, vote_id):
     u"""
     Показывает подробную информацию о предложении.
-    
+
     команда: /vote show [id]
     """
     vote = db.get(eid=vote_id)
@@ -128,7 +128,7 @@ def show_vote(user_id, vote_id):
 def rate_vote(user_id, user, vote_id, rank):
     u"""
     Проголосовать за предложение.
-    
+
     команда: /vote rate [id] [1-5]
     """
     if rank in range(1, 6):
@@ -155,9 +155,9 @@ def rate_vote(user_id, user, vote_id, rank):
 def update_vote(user_id, vote_id, text):
     u"""
     Обновляет текст предложения.
-    
+
     Такая возможность должна быть только у автора предложения.
-    
+
     команда: /vote update [id] [text]
     """
     vote = db.get(eid=vote_id)
@@ -175,9 +175,9 @@ def update_vote(user_id, vote_id, text):
 def delete_vote(user_id, vote_id):
     u"""
     Удаляет предложение.
-    
+
     Такая возможность должна быть только у автора предложения.
-    
+
     команда: /vote delete [id]
     """
     vote = db.get(eid=vote_id)
@@ -192,7 +192,7 @@ def delete_vote(user_id, vote_id):
 def list_votes(user_id):
     u"""
     Выводит список предложений начиная с самого высокого ранга.
-    
+
     команда: /vote list
     """
     # Берем первые десять
@@ -210,7 +210,7 @@ def list_votes(user_id):
 def help(user_id):
     u"""
     Выводит список команд и полезную информацию о команде
-    
+
     команда: /vote, /vote help
     """
     text = u"""
@@ -231,6 +231,12 @@ def help(user_id):
 def img(path):
     u"""Отдает статичные файлы."""
     return send_from_directory('static', path)
+
+
+@app.route('/dist/<path:path>')
+def webpack(path):
+    u"""Отдает статичные файлы."""
+    return send_from_directory('dist', path)
 
 
 @app.route('/slack/vote', methods=['GET', 'POST'])
@@ -282,7 +288,7 @@ def vote():
                 # /vote rate [id] [rank(1-5)]
                 vote_rate = re.findall(r'rate\s(\d{1,2})\s{1,}(\d{1,})', text)
                 if vote_rate:
-                    rate_vote(user_id, user, int(vote_rate[0][0]), int(vote_rate[0][1]))  
+                    rate_vote(user_id, user, int(vote_rate[0][0]), int(vote_rate[0][1]))
                 else:
                     send_404(user_id, u"Ошибка на фабрике по производству спирта")
         else:
