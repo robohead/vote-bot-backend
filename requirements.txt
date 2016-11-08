@@ -2,3 +2,4 @@ Flask == 0.11.1
 prospector == 0.12.4
 slackclient == 1.0.2
 tinydb == 3.2.1
+Flask-Cors==3.0.2

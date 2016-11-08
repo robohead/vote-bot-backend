@@ -2,6 +2,7 @@
 import re
 import os
 
+from flask_cors import CORS
 from flask import Flask, request, Response, jsonify, send_from_directory, render_template
 from slackclient import SlackClient
 from tinydb import TinyDB, Query
@@ -28,6 +29,7 @@ DEFAULT_CHANNEL = os.environ.get('DEFAULT_CHANNEL')
 
 # Flask
 app = Flask(__name__, static_url_path='')
+CORS(app)
 slack_client = SlackClient(SLACK_TOKEN)
 
 # Database
