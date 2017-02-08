@@ -119,13 +119,6 @@ module.exports = function (env) {
       compress: isProd,
       inline: !isProd,
       hot: !isProd,
-      proxy: {
-          {
-            context:[ '/' ],
-            target: 'http://127.0.0.1:5000',
-            secure: false
-        }
-      }
       stats: {
         assets: true,
         children: false,
