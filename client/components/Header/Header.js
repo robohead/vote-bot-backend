@@ -1,5 +1,6 @@
-import React from 'react';
-import AppBar from 'material-ui/AppBar';
+import React from 'react'
+import AppBar from 'material-ui/AppBar'
+import NavList from './NavList'
 
 /**
  * A simple example of `AppBar` with an icon on the right.
@@ -7,9 +8,10 @@ import AppBar from 'material-ui/AppBar';
  */
 const Header = () => (
   <AppBar
-    title="Title"
-    iconClassNameRight="muidocs-icon-navigation-expand-more"
+      title='Title'
+      iconClassNameRight='muidocs-icon-navigation-expand-more'
+      iconElementRight={<NavList />}
   />
-);
+)
 
-export default Header;
+export default Header
