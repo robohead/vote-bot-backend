@@ -1,30 +1,23 @@
 import React from 'react'
 import AppBar from 'material-ui/AppBar'
 import styled from 'styled-components'
+import FlatButton from 'material-ui/FlatButton'
 
-const NavListWrap = styled.ul`
+const NavListWrap = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 100%;
+    margin-top: -4px;
   `
 
-const NavListItem = styled.a`
-    color: #000;
-    display: inline-block;
-    padding: 10px;
-    margin-left: 10px;
-    text-decoration: none;
-  `
-
-let google = 'google.com'
+let google = 'http://google.com'
+let googleRu = 'http://google.ru'
 
 const NavList = () => (
-  <NavListWrap
-    title='Title'
-    iconClassNameRight='muidocs-icon-navigation-expand-more'
-  >
-    {/* <NavListItem href='#'>Login</NavListItem>
-      <NavListItem href='#'>Go to Slack</NavListItem> */}
+  <NavListWrap>
+    <FlatButton label='google.com' href={google} />
+    <FlatButton label='google.ru' href={googleRu} />
   </NavListWrap>
 )
 

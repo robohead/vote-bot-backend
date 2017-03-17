@@ -8,9 +8,8 @@ import NavList from './NavList'
  */
 const Header = () => (
   <AppBar
-      title='Title'
-      iconClassNameRight='muidocs-icon-navigation-expand-more'
-      iconElementRight={<NavList />}
+    title='Title'
+    iconElementRight={<NavList />}
   />
 )
 
