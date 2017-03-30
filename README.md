@@ -20,5 +20,5 @@ Slack-бот для голосований
 
 ## Установка
 1. `$ pip install -r requirements.txt`
-2. `$ echo "SLACK_TOKEN='' SLASH_COMMANDS_TOKEN='' DOMAIN='' DEFAULT_CHANNEL='' python app.py" > start.sh`
-3. `$ chmod +x start.sh && ./start.sh`
+2. `$ pip install -e .`
+3. `$ SLACK_TOKEN='' SLASH_COMMANDS_TOKEN='' DOMAIN='' run.sh`
